@@ -44,7 +44,7 @@ _git_team() {
 			return 0
 			;;
 		assignments)
-			COMPREPLY+=( $(compgen -W "add rm ls" -- $cur) )
+			COMPREPLY+=( $(compgen -W "add rm ls import" -- $cur) )
 			;;
 		rm)
 			COMPREPLY=( $(compgen -W "${aliases}" -- $cur) )
@@ -52,6 +52,14 @@ _git_team() {
 			;;
 		list | ls)
 			COMPREPLY=()
+			return 0
+			;;
+		import)
+			COMPREPLY=( $(compgen -W "ldap" -- $cur) )
+			return 0
+			;;
+		ldap)
+			COMPREPLY+=( $(compgen -W "--config-dir -c" -- $cur) )
 			return 0
 			;;
 		*)

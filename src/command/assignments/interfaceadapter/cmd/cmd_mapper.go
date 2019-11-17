@@ -5,6 +5,7 @@ import (
 
 	"github.com/hekmekk/git-team/src/command/adapter"
 	"github.com/hekmekk/git-team/src/command/assignments/add/interfaceadapter/cmd"
+	"github.com/hekmekk/git-team/src/command/assignments/import/interfaceadapter/cmd"
 	"github.com/hekmekk/git-team/src/command/assignments/list/interfaceadapter/cmd"
 	"github.com/hekmekk/git-team/src/command/assignments/remove/interfaceadapter/cmd"
 )
@@ -19,6 +20,8 @@ func Command(root commandadapter.CommandRoot) *kingpin.CmdClause {
 	addcmdadapter.Command(assignments)
 
 	removecmdadapter.Command(assignments)
+
+	importcmdadapter.Command(assignments)
 
 	return assignments
 }
